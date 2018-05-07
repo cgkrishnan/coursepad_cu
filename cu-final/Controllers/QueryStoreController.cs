@@ -7,6 +7,7 @@ using ContosoUniversity.Data;
 using ContosoUniversity.Models.QueryStoreModels;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
+using System.Data;
 
 namespace ContosoUniversity.Controllers
 {
@@ -20,11 +21,10 @@ namespace ContosoUniversity.Controllers
             _context = context;
         }
 
-        // GET: /<controller>/
+        // GET: QuertStore
         public async Task<ActionResult> Index()
         {
             List<QueryStore> groups = new List<QueryStore>();
-
 
             var conn = _context.Database.GetDbConnection();
             try
@@ -69,6 +69,45 @@ namespace ContosoUniversity.Controllers
             }
 
             return View(groups);
+        }
+
+        // GET: Students/Details/5
+        public async Task<ActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var queryDetails = new DataTable();
+            var conn = _context.Database.GetDbConnection();
+
+            try
+            {
+                await conn.OpenAsync();
+                using (var command = conn.CreateCommand())
+                {
+                    string query = "SELECT Txt.query_text_id, Txt.query_sql_text, Qry.* "+
+                                   "FROM  sys.query_store_query AS Qry "+
+                                   "JOIN sys.query_store_query_text AS Txt "+
+                                   "ON Qry.query_text_id = Txt.query_text_id "+
+                                   "where Qry.query_id ="+id;
+                    command.CommandText = query;
+                    DbDataReader reader = await command.ExecuteReaderAsync();
+
+                    if (reader.HasRows)
+                    {
+                        queryDetails.Load(reader);
+                    }
+                    reader.Dispose();
+                }
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return View(queryDetails);
         }
     }
 }

@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.query_sql_text)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.query_id)
+                <a asp-action="Details" asp-route-id="@item.query_id"> @Html.DisplayFor(modelItem => item.query_id) </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.query_text_id)
