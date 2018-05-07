@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ContosoUniversity.Models.QueryStoreModels.QueryStore>
+
+@{
+    ViewData["Title"] = "Query Store";
+}
+
+<h2>Query Statistics</h2>
+<table>
+    <tr>
+        <th>
+            Query ID
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.query_text_id)
+            </td>
+        </tr>
+    }
+</table>
