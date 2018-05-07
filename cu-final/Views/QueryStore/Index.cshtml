@@ -7,64 +7,28 @@
 <h2>Query Statistics</h2>
 <table cellspacing="10" border="1">
     <tr>
-        <th>
-            AVG_PHYSICAL_IO_READ
-        </th>
-        <th>
-            AVG_DURATION
-        </th>
-        <th>
-            QUERY_SQL_TEXT
-        </th>
-        <th>
-            QUERY_ID
-        </th>
-        <th>
-            QUERY_TEXT_ID
-        </th>
-        <th>
-            PLAN_ID
-        </th>
-        <th>
-            RUNTIME_STATS_ID
-        </th>
-        <th>
-            AVG_ROWCOUNT
-        </th>
-        <th>
-            COUNT_EXECUTIONS
-        </th>
+        <th> @Html.DisplayNameFor(model => model.avg_physical_io_reads) </th>
+        <th> @Html.DisplayNameFor(model => model.avg_duration) </th>
+        <th> @Html.DisplayNameFor(model => model.query_sql_text) </th>
+        <th> @Html.DisplayNameFor(model => model.query_id) </th>
+        <th> @Html.DisplayNameFor(model => model.query_text_id) </th>
+        <th> @Html.DisplayNameFor(model => model.plan_id) </th>
+        <th> @Html.DisplayNameFor(model => model.runtime_stats_id) </th>
+        <th> @Html.DisplayNameFor(model => model.avg_rowcount) </th>
+        <th> @Html.DisplayNameFor(model => model.count_executions) </th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.avg_physical_io_reads)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.avg_duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.query_sql_text)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.query_id"> @Html.DisplayFor(modelItem => item.query_id) </a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.query_text_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plan_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.runtime_stats_id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.avg_rowcount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.count_executions)
-            </td>
+            <td> @Html.DisplayFor(modelItem => item.avg_physical_io_reads) </td>
+            <td> @Html.DisplayFor(modelItem => item.avg_duration) </td>
+            <td> @Html.DisplayFor(modelItem => item.query_sql_text) </td>
+            <td> <a asp-action="Details" asp-route-id="@item.query_id"> @Html.DisplayFor(modelItem => item.query_id) </a> </td>
+            <td> @Html.DisplayFor(modelItem => item.query_text_id) </td>
+            <td> @Html.DisplayFor(modelItem => item.plan_id) </td>
+            <td> @Html.DisplayFor(modelItem => item.runtime_stats_id) </td>
+            <td> @Html.DisplayFor(modelItem => item.avg_rowcount) </td>
+            <td> @Html.DisplayFor(modelItem => item.count_executions) </td>
         </tr>
     }
 </table>

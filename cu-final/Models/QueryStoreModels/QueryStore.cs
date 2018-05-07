@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace ContosoUniversity.Models.QueryStoreModels
 {
+    /* Model class created based on the Output 
+     * of the Query List sql statement*/
+
     public class QueryStore
     {
         public Double avg_physical_io_reads { get; set; }

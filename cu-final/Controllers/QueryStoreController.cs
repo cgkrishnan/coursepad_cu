@@ -15,11 +15,14 @@ namespace ContosoUniversity.Controllers
     {
         private readonly SchoolContext _context;
 
-
         public QueryStoreController(SchoolContext context)
         {
             _context = context;
         }
+
+        /* Controller Method for populating Query Store List.
+         * Retrives data based on the query and result
+         * populated to the Model Class created */
 
         // GET: QuertStore
         public async Task<ActionResult> Index()
@@ -70,6 +73,10 @@ namespace ContosoUniversity.Controllers
 
             return View(groups);
         }
+
+        /* Controller Method for populating Query details.
+         * Retrives data based on the query ID selected and result
+         * populated to a DataTable created */
 
         // GET: Students/Details/5
         public async Task<ActionResult> Details(int? id)
