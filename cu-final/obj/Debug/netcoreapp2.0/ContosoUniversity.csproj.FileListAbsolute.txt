@@ -8,3 +8,4 @@ C:\Users\ASUS\Documents\Git\coursepad_cu\cu-final\obj\Debug\netcoreapp2.0\Contos
 C:\Users\ASUS\Documents\Git\coursepad_cu\cu-final\obj\Debug\netcoreapp2.0\ContosoUniversity.AssemblyInfo.cs
 C:\Users\ASUS\Documents\Git\coursepad_cu\cu-final\obj\Debug\netcoreapp2.0\ContosoUniversity.dll
 C:\Users\ASUS\Documents\Git\coursepad_cu\cu-final\obj\Debug\netcoreapp2.0\ContosoUniversity.pdb
+C:\Users\ASUS\Documents\Git\coursepad_cu\cu-final\obj\Debug\netcoreapp2.0\ContosoUniversity.csprojResolveAssemblyReference.cache

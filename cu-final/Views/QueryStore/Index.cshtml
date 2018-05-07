@@ -5,17 +5,65 @@
 }
 
 <h2>Query Statistics</h2>
-<table>
+<table cellspacing="10" border="1">
     <tr>
         <th>
-            Query ID
+            AVG_PHYSICAL_IO_READ
+        </th>
+        <th>
+            AVG_DURATION
+        </th>
+        <th>
+            QUERY_SQL_TEXT
+        </th>
+        <th>
+            QUERY_ID
+        </th>
+        <th>
+            QUERY_TEXT_ID
+        </th>
+        <th>
+            PLAN_ID
+        </th>
+        <th>
+            RUNTIME_STATS_ID
+        </th>
+        <th>
+            AVG_ROWCOUNT
+        </th>
+        <th>
+            COUNT_EXECUTIONS
         </th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.avg_physical_io_reads)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avg_duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.query_sql_text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.query_id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.query_text_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plan_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.runtime_stats_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avg_rowcount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.count_executions)
             </td>
         </tr>
     }
